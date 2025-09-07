@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rakshith Gowda H J | Professional Portfolio</title>
+  <link rel="icon" href="/public/portfolio-icon.svg" type="image/svg+xml" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 
+            primary: '#1e40af', 
+            secondary: '#4f46e5', 
+            accent: '#10b981', 
+            darkBg: '#111827', 
+            lightText: '#f3f4f6',
+            neutral: '#6b7280',
+            borderGray: '#d1d5db'
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+          animation: { 
+            'fade-in': 'fadeIn 1s ease-in-out', 
+            'slide-up': 'slideUp 0.8s ease-out',
+            'scale-in': 'scaleIn 0.5s ease-out',
+            'bounce-in': 'bounceIn 1.5s ease-in-out',
+            'gradient-flow': 'gradientFlow 5s ease infinite'
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(30px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            scaleIn: { '0%': { transform: 'scale(0.95)', opacity: '0' }, '100%': { transform: 'scale(1)', opacity: '1' } },
+            bounceIn: { '0%': { transform: 'scale(0.5)', opacity: '0' }, '50%': { transform: 'scale(1.1)', opacity: '1' }, '100%': { transform: 'scale(1)' } },
+            gradientFlow: { '0%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' }, '100%': { backgroundPosition: '0% 50%' } }
+          },
+          boxShadow: {
+            'custom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05)',
+            'hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+          }
+        },
+      },
+      darkMode: 'class',
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; font-family: 'Inter', sans-serif; }
+    body { overflow-x: hidden; background-color: #f9fafb; }
+    .animate-fade-in { animation: fadeIn 1s ease-in-out; }
+    .animate-slide-up { animation: slideUp 0.8s ease-out; }
+    .animate-scale-in { animation: scaleIn 0.5s ease-out; }
+    .animate-bounce-in { animation: bounceIn 1.5s ease-in-out; }
+    .animate-gradient-flow { animation: gradientFlow 5s ease infinite; background-size: 200% 200%; }
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-400 { animation-delay: 400ms; }
+    .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+    .glassmorphism { background: rgba(255, 255, 255, 0.8); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); backdrop-filter: blur(5px); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.2); }
+    .section-divider { height: 1px; background: linear-gradient(to right, transparent, #10b981, transparent); margin: 2rem 0; }
+    .social-icon { transition: all 0.3s ease; }
+    .social-icon:hover { color: #10b981; transform: scale(1.2) rotate(10deg); }
+    .card { border-radius: 12px; overflow: hidden; background: white; transition: all 0.3s ease; }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+    .timeline::after { content: ''; position: absolute; width: 6px; background-color: #10b981; top: 0; bottom: 0; left: 50%; margin-left: -3px; }
+    .timeline-container { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
+    .timeline-container.left { left: 0; }
+    .timeline-container.right { left: 50%; }
+    .timeline-container::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: white; border: 3px solid #10b981; top: 15px; border-radius: 50%; z-index: 1; }
+    .right::after { left: -10px; }
+    .timeline-content { padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .contact-input { transition: all 0.3s ease; }
+    .contact-input:focus { box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3); border-color: #10b981; transform: scale(1.02); }
+    .skill-tag { display: inline-block; padding: 0.5rem 1rem; border-radius: 9999px; background: #e5e7eb; color: #111827; font-size: 0.875rem; margin: 0.25rem; transition: all 0.3s ease; }
+    .skill-tag:hover { background: #10b981; color: white; transform: scale(1.1); }
+    .cert-badge { display: inline-block; padding: 0.5rem 1rem; border-radius: 9999px; background: #10b981; color: white; font-size: 0.875rem; font-weight: 500; transition: all 0.3s ease; }
+    .cert-badge:hover { background: #059669; transform: scale(1.1); }
+    .project-card { perspective: 1000px; }
+    .project-card-inner { transition: transform 0.6s; transform-style: preserve-3d; }
+    .project-card:hover .project-card-inner { transform: rotateY(180deg); }
+    .project-front, .project-back { backface-visibility: hidden; }
+    .project-back { transform: rotateY(180deg); background: #10b981; color: white; padding: 1rem; }
+    .logo-container { display: flex; align-items: center; justify-content: center; }
+  </style>
+</head>
+<body class="relative">
+  <div id="root"></div>
+
+  <!-- React & EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    emailjs.init('2kIGkacd4B0wZAeee');
+    const { useState, useEffect } = React;
+
+    // Dark Mode Toggle
+    const DarkModeToggle = () => {
+      const [darkMode, setDarkMode] = useState(false);
+      useEffect(() => {
+        if (darkMode) {
+          document.body.classList.add('dark');
+        } else {
+          document.body.classList.remove('dark');
+        }
+      }, [darkMode]);
+      return React.createElement(
+        'button',
+        { onClick: () => setDarkMode(!darkMode), className: 'fixed top-4 right-4 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white p-2 rounded-full shadow-md hover:bg-gray-200 dark:hover:bg-gray-700 transition' },
+        darkMode ? '☀️' : '🌙'
+      );
+    };
+
+    // Navbar
+    const Navbar = () => React.createElement(
+      'nav', { className: 'bg-primary text-white sticky top-0 z-50 shadow-md' },
+      React.createElement(
+        'div', { className: 'container mx-auto px-4 py-4 flex justify-between items-center' },
+        React.createElement(
+          'div', { className: 'logo-container w-full text-center' },
+          React.createElement('h1', { className: 'text-2xl font-bold' }, 'Rakshith Gowda H J')
+        ),
+        React.createElement(
+          'ul', { className: 'flex space-x-6' },
+          ['Home', 'About', 'Education', 'Skills', 'Projects', 'Certifications', 'Contact'].map((item) =>
+            React.createElement('li', { key: item },
+              React.createElement('a', { href: `#${item.toLowerCase()}`, className: 'hover:text-accent transition font-medium', 'aria-label': item }, item)
+            )
+          )
+        ),
+        React.createElement(DarkModeToggle)
+      )
+    );
+
+    // Hero
+    const Hero = () => React.createElement(
+      'section', { id: 'home', className: 'bg-gradient-to-r from-primary to-secondary text-white py-20 text-center min-h-screen flex items-center animate-gradient-flow' },
+      React.createElement(
+        'div', { className: 'container mx-auto px-4' },
+        React.createElement('h1', { className: 'text-5xl md:text-6xl font-bold mb-4 animate-fade-in' }, 'Rakshith Gowda H J'),
+        React.createElement('p', { className: 'text-xl md:text-2xl mb-6 animate-fade-in delay-100 font-medium' }, 'Full Stack Developer | Azure Technology Specialist | AI & Data Enthusiast'),
+        React.createElement('a', { href: '#contact', className: 'bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition hover-lift', 'aria-label': 'Connect with Me' }, 'Connect with Me'),
+        React.createElement(
+          'div', { className: 'mt-6 flex space-x-4 justify-center animate-slide-up delay-200' },
+          React.createElement('a', { href: 'https://linkedin.com', className: 'text-white social-icon animate-bounce-in', 'aria-label': 'LinkedIn' }, React.createElement('i', { className: 'fab fa-linkedin text-2xl' })),
+          React.createElement('a', { href: 'https://github.com', className: 'text-white social-icon animate-bounce-in delay-100', 'aria-label': 'GitHub' }, React.createElement('i', { className: 'fab fa-github text-2xl' })),
+          React.createElement('a', { href: 'mailto:rakshithgowdaka09@gmail.com', className: 'text-white social-icon animate-bounce-in delay-200', 'aria-label': 'Email' }, React.createElement('i', { className: 'fas fa-envelope text-2xl' })),
+          React.createElement('a', { href: 'tel:+919972073303', className: 'text-white social-icon animate-bounce-in delay-300', 'aria-label': 'Phone' }, React.createElement('i', { className: 'fas fa-phone text-2xl' }))
+        )
+      )
+    );
+
+    // About
+    const About = () => React.createElement(
+      'section', { id: 'about', className: 'py-20 bg-white dark:bg-darkBg min-h-screen flex items-center' },
+      React.createElement(
+        'div', { className: 'container mx-auto px-4' },
+        React.createElement('h2', { className: 'text-4xl font-bold text-center text-primary mb-8 animate-slide-up' }, 'About Me'),
+        React.createElement(
+          'div', { className: 'max-w-3xl mx-auto text-gray-700 dark:text-lightText leading-relaxed glassmorphism p-8 animate-fade-in' },
+          React.createElement('p', { className: 'text-lg mb-4 animate-slide-up' }, 
+            'I am Rakshith Gowda H J, a dedicated Full Stack Developer and Azure Technology Specialist with a Bachelor’s degree in Computer Science and Engineering from Government Engineering College, Kushalnagar. With expertise in Python, SQL, JavaScript, and Azure cloud solutions, I build scalable, secure, and efficient web applications. My focus on Azure technologies enables me to design and deploy cloud-based solutions, optimizing performance and reliability.'
+          ),
+          React.createElement('p', { className: 'text-lg mb-4 animate-slide-up delay-100' }, 
+            'I excel in transforming complex requirements into seamless digital experiences, with hands-on experience in AI-driven projects and data analytics. Proficient in Azure services like App Services, Functions, Blob Storage, and DevOps, I am committed to delivering innovative, user-centric solutions that address real-world challenges.'
+          ),
+          React.createElement('div', { className: 'section-divider animate-scale-in' })
+        )
+      )
+    );
+
+    // Education
+    const Education = () => React.createElement(
+      'section', { id: 'education', className: 'py-20 bg-gray-100 dark:bg-gray-800 min-h-screen flex items-center' },
+      React.createElement(
+        'div', { className: 'container mx-auto px-4' },
+        React.createElement('h2', { className: 'text-4xl font-bold text-center text-primary mb-8 animate-slide-up' }, 'Education'),
+        React.createElement(
+          'div', { className: 'timeline' },
+          [
+            { title: 'Bachelor of Engineering in Computer Science and Engineering', institution: 'Government Engineering College, Kushalnagar', period: 'Dec 2021 – Apr 2025', details: 'Specialized in algorithms, data structures, and cloud computing. Focused on Azure-based solutions for scalable applications.' },
+            { title: 'Pre-University Course (PCMB)', institution: 'Mahesh PU College, Karnataka', period: 'Jun 2018 – Jun 2020', details: 'Studied Physics, Chemistry, Mathematics, and Biology with a focus on analytical problem-solving.' },
+            { title: 'Secondary School Leaving Certificate (SSLC)', institution: 'SMS High School, Karnataka', period: 'Jun 2017 – Apr 2018', details: 'Achieved distinction in core subjects, laying a strong foundation in science and mathematics.' }
+          ].map((edu, i) => React.createElement(
+            'div', { key: i, className: `timeline-container ${i % 2 === 0 ? 'left' : 'right'} animate-bounce-in delay-${i*100}` },
+            React.createElement(
+              'div', { className: 'timeline-content' },
+              React.createElement('h3', { className: 'text-xl font-semibold text-primary' }, edu.title),
+              React.createElement('p', { className: 'text-gray-600 dark:text-lightText' }, `${edu.institution} | ${edu.period}`),
+              React.createElement('p', { className: 'text-gray-500 dark:text-gray-400 mt-2' }, edu.details)
+            )
+          ))
+        ),
+        React.createElement('div', { className: 'section-divider animate-scale-in' })
+      )
+    );
+
+    // Skills
+    const Skills = () => {
+      const technical = [
+        { name: 'Python', icon: 'fab fa-python' },
+        { name: 'SQL', icon: 'fas fa-database' },
+        { name: 'Pandas', icon: 'fas fa-table' },
+        { name: 'NumPy', icon: 'fas fa-calculator' },
+        { name: 'Scikit-Learn', icon: 'fas fa-brain' },
+        { name: 'Matplotlib', icon: 'fas fa-chart-line' },
+        { name: 'MySQL', icon: 'fas fa-server' },
+        { name: 'Oracle SQL', icon: 'fas fa-database' },
+        { name: 'Power BI', icon: 'fas fa-chart-bar' },
+        { name: 'Tableau', icon: 'fas fa-chart-pie' },
+        { name: 'MS Office (Excel, Word, PowerPoint)', icon: 'fas fa-file-word' },
+        { name: 'PyCharm', icon: 'fas fa-code' },
+        { name: 'Jupyter Notebook', icon: 'fas fa-notebook' },
+        { name: 'Visual Studio Code', icon: 'fas fa-code' },
+        { name: 'HTML', icon: 'fab fa-html5' },
+        { name: 'CSS', icon: 'fab fa-css3-alt' },
+        { name: 'JavaScript', icon: 'fab fa-js' },
+        { name: 'Azure App Services', icon: 'fas fa-cloud' },
+        { name: 'Azure Functions', icon: 'fas fa-cogs' },
+        { name: 'Azure Blob Storage', icon: 'fas fa-database' },
+        { name: 'Azure DevOps', icon: 'fas fa-tools' }
+      ];
+      const soft = [
+        { name: 'Leadership', icon: 'fas fa-users' },
+        { name: 'Strategic Communication', icon: 'fas fa-comments' },
+        { name: 'Multitasking Under Pressure', icon: 'fas fa-tasks' },
+        { name: 'Stakeholder Collaboration', icon: 'fas fa-handshake' },
+        { name: 'Team Coordination', icon: 'fas fa-sitemap' }
+      ];
+      return React.createElement(
+        'section', { id: 'skills', className: 'py-20 bg-white dark:bg-darkBg min-h-screen flex items-center' },
+        React.createElement(
+          'div', { className: 'container mx-auto px-4' },
+          React.createElement('h2', { className: 'text-4xl font-bold text-center text-primary mb-8 animate-slide-up' }, 'Skills'),
+          React.createElement('h3', { className: 'text-2xl font-semibold text-center text-gray-700 dark:text-lightText mb-6 animate-fade-in' }, 'Technical Skills'),
+          React.createElement(
+            'div', { className: 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto' },
+            technical.map((s, i) => React.createElement(
+              'div', 
+              { key: i, className: 'skill-tag text-center p-4 rounded-lg shadow-custom hover-lift animate-bounce-in delay-' + (i*50) },
+              React.createElement('i', { className: `${s.icon} text-2xl mb-2` }),
+              React.createElement('span', null, s.name)
+            ))
+          ),
+          React.createElement('h3', { className: 'text-2xl font-semibold text-center text-gray-700 dark:text-lightText mt-12 mb-6 animate-fade-in' }, 'Soft Skills'),
+          React.createElement(
+            'div', { className: 'grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto' },
+            soft.map((s, i) => React.createElement(
+              'div', 
+              { key: i, className: 'skill-tag text-center p-4 rounded-lg shadow-custom hover-lift animate-bounce-in delay-' + (i*50) },
+              React.createElement('i', { className: `${s.icon} text-2xl mb-2` }),
+              React.createElement('span', null, s.name)
+            ))
+          ),
+          React.createElement('div', { className: 'section-divider animate-scale-in' })
+        )
+      );
+    };
+
+    // Projects
+    const Projects = () => {
+      const projects = [
+        { 
+          title: 'Tourism Management System', 
+          type: 'Mini Project', 
+          description: 'Engineered a full-stack web application to streamline travel package management, bookings, and user feedback.', 
+          tech: 'HTML, CSS, JavaScript, MySQL', 
+          back: 'Features: User authentication, real-time booking system, and feedback integration.'
+        },
+        { 
+          title: 'Real-Time Criminal Face Detection', 
+          type: 'Mini Project', 
+          description: 'Developed a facial recognition system using OpenCV and Haar Cascade algorithms for real-time surveillance.', 
+          tech: 'OpenCV, Python, Haar Cascade', 
+          back: 'Achieved 85% accuracy with optimized preprocessing for diverse lighting conditions.'
+        },
+        { 
+          title: 'Deepfake Detection Using Convolutional Neural Networks', 
+          type: 'Mini Project', 
+          description: 'Created a CNN-based model to identify manipulated videos with 92% accuracy using data augmentation techniques.', 
+          tech: 'Python, TensorFlow, CNN', 
+          back: 'Implemented robust preprocessing pipelines for enhanced model performance.'
+        },
+        { 
+          title: 'Real-Time Voice to Image Generation Using Stable Diffusion', 
+          type: 'Main Project', 
+          description: 'Designed an AI-driven pipeline integrating speech-to-text APIs with Stable Diffusion for real-time image generation.', 
+          tech: 'Python, Stable Diffusion, Speech-to-Text APIs', 
+          back: 'Optimized for 30-second response times with efficient memory utilization.'
+        }
+      ];
+      return React.createElement(
+        'section', { id: 'projects', className: 'py-20 bg-gray-100 dark:bg-gray-800 min-h-screen flex items-center' },
+        React.createElement(
+          'div', { className: 'container mx-auto px-4' },
+          React.createElement('h2', { className: 'text-4xl font-bold text-center text-primary mb-8 animate-slide-up' }, 'Academic Projects'),
+          React.createElement(
+            'div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto' },
+            projects.map((p, i) => React.createElement(
+              'div', 
+              { key: i, className: 'project-card card shadow-custom hover-lift animate-bounce-in delay-' + (i*100) },
+              React.createElement(
+                'div', 
+                { className: 'project-card-inner h-full' },
+                React.createElement(
+                  'div', 
+                  { className: 'project-front p-6 h-full' },
+                  React.createElement('h3', { className: 'text-xl font-semibold text-primary mb-2' }, p.title),
+                  React.createElement('p', { className: 'text-sm text-gray-500 dark:text-gray-400 mb-2' }, p.type),
+                  React.createElement('p', { className: 'text-gray-600 dark:text-lightText mb-4' }, p.description),
+                  React.createElement('p', { className: 'text-sm text-gray-500 dark:text-gray-400' }, `Tech Stack: ${p.tech}`)
+                ),
+                React.createElement(
+                  'div', 
+                  { className: 'project-back p-6 absolute top-0 left-0 w-full h-full flex items-center justify-center' },
+                  React.createElement('p', { className: 'text-sm' }, p.back)
+                )
+              )
+            ))
+          ),
+          React.createElement('div', { className: 'section-divider animate-scale-in' })
+        )
+      );
+    };
+
+    // Certifications
+    const Certifications = () => {
+      const certs = [
+        'Complete Microsoft Office Suite: Excel, Word, PowerPoint, Outlook',
+        'Introduction to Python Programming: Core Syntax, Loops, Functions, Data Structures',
+        'Introduction to Web Technologies: HTML, CSS, JavaScript Fundamentals',
+        'Data Analytics with Power BI and Tableau: Data Visualization, Dashboard Creation, Insight Publishing',
+        'MySQL Fundamentals and Advanced Querying: Database Management, Joins, Subqueries',
+        'NumPy and Pandas for Data Analysis: Data Manipulation, Preprocessing, Analysis with Python Libraries'
+      ];
+      return React.createElement(
+        'section', { id: 'certifications', className: 'py-20 bg-white dark:bg-darkBg min-h-screen flex items-center' },
+        React.createElement(
+          'div', { className: 'container mx-auto px-4' },
+          React.createElement('h2', { className: 'text-4xl font-bold text-center text-primary mb-8 animate-slide-up' }, 'Certifications'),
+          React.createElement(
+            'div', { className: 'flex flex-wrap justify-center gap-4 max-w-4xl mx-auto' },
+            certs.map((c, i) => React.createElement(
+              'span', 
+              { key: i, className: 'cert-badge animate-bounce-in delay-' + (i*50) }, 
+              c
+            ))
+          ),
+          React.createElement('div', { className: 'section-divider animate-scale-in' })
+        )
+      );
+    };
+
+    // Contact
+    const Contact = () => {
+      const [formData, setFormData] = useState({ from_name: '', from_email: '', subject: '', message: '' });
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        emailjs.send(
+          'service_cv96b6f',
+          'template_nw6joqd',
+          formData,
+          '2kIGkacd4B0wZAeee'
+        ).then(
+          () => { alert('✅ Message sent successfully!'); setFormData({ from_name: '', from_email: '', subject: '', message: '' }); },
+          (error) => { console.error('❌ EmailJS error:', error); alert('❌ Failed to send message.'); }
+        );
+      };
+
+      const handleChange = (e) => { setFormData({ ...formData, [e.target.id]: e.target.value }); };
+
+      return React.createElement(
+        'section', { id: 'contact', className: 'py-20 bg-gradient-to-r from-primary to-secondary text-white min-h-screen flex items-center animate-gradient-flow' },
+        React.createElement(
+          'div', { className: 'container mx-auto px-4' },
+          React.createElement('h2', { className: 'text-4xl font-bold text-center mb-8 animate-slide-up' }, 'Get in Touch'),
+          React.createElement(
+            'form', { className: 'max-w-lg mx-auto space-y-6 glassmorphism p-8 animate-bounce-in' },
+            ['from_name', 'from_email', 'subject', 'message'].map((field, i) =>
+              React.createElement('div', { key: field, className: 'animate-scale-in delay-' + (i*100) },
+                React.createElement('label', { className: 'block text-white font-medium mb-2', htmlFor: field }, field.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())),
+                field === 'message'
+                  ? React.createElement('textarea', { id: field, value: formData[field], onChange: handleChange, className: 'w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-lightText contact-input', rows: 5, placeholder: `Your ${field}`, required: true })
+                  : React.createElement('input', { type: field === 'from_email' ? 'email' : 'text', id: field, value: formData[field], onChange: handleChange, className: 'w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-lightText contact-input', placeholder: `Your ${field}`, required: true })
+              )
+            ),
+            React.createElement('button', { type: 'submit', className: 'w-full bg-accent text-white py-3 rounded-lg font-semibold hover:bg-emerald-600 transition hover-lift', 'aria-label': 'Send Message' }, 'Send Message')
+          ),
+          React.createElement('div', { className: 'mt-6 text-center animate-fade-in delay-200' },
+            React.createElement('p', { className: 'text-lg' }, 'Or reach me directly:'),
+            React.createElement('a', { href: 'mailto:rakshithgowdaka09@gmail.com', className: 'text-accent hover:underline font-medium' }, 'rakshithgowdaka09@gmail.com'),
+            React.createElement('br'),
+            React.createElement('a', { href: 'tel:+919972073303', className: 'text-accent hover:underline font-medium' }, '+91 9972073303')
+          )
+        )
+      );
+    };
+
+    // App
+    const App = () => React.createElement('div', null,
+      React.createElement(Navbar),
+      React.createElement(Hero),
+      React.createElement(About),
+      React.createElement(Education),
+      React.createElement(Skills),
+      React.createElement(Projects),
+      React.createElement(Certifications),
+      React.createElement(Contact)
+    );
+
+    ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+  </script>
+</body>
+</html>
